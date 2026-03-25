@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia de Amor 💕</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { bg: '#1a1a2e', card: '#16213e', text: '#eee' },
+                        light: { bg: '#fef7f0', card: '#ffffff', text: '#2d3436' },
+                        primary: '#ff6b9d',
+                        accent: '#feca57',
+                        love: '#ee5a6f'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/love-styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text transition-colors duration-300 font-inter">
+    <!-- Floating Hearts Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="heart-float absolute top-10 left-10 text-pink-300 opacity-30">❤️</div>
+        <div class="heart-float absolute top-20 right-20 text-pink-400 opacity-20" style="animation-delay: 2s;">💕</div>
+        <div class="heart-float absolute bottom-20 left-20 text-pink-300 opacity-25" style="animation-delay: 4s;">💖</div>
+        <div class="heart-float absolute top-1/2 right-10 text-pink-400 opacity-30" style="animation-delay: 1s;">💗</div>
+        <div class="heart-float absolute bottom-10 right-1/3 text-pink-300 opacity-20" style="animation-delay: 3s;">💝</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md border-b border-pink-100 dark:border-pink-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-dancing">Nuestra Historia</span>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="#contador" class="nav-link text-sm font-medium hover:text-primary transition-colors">Tiempo Juntos</a>
+                    <a href="#galeria" class="nav-link text-sm font-medium hover:text-primary transition-colors">Galería</a>
+                    <a href="#calendario" class="nav-link text-sm font-medium hover:text-primary transition-colors">Fechas Especiales</a>
+                    <a href="#dedicatoria" class="nav-link text-sm font-medium hover:text-primary transition-colors">Dedicatoria</a>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-colors">
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block text-yellow-400"></i>
+                        <i data-lucide="sun" class="w-5 h-5 block dark:hidden text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="relative min-h-screen flex items-center justify-center px-4 pt-16">
+        <div class="text-center space-y-8 z-10">
+            <div class="space-y-4">
+                <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-love bg-clip-text text-transparent animate-pulse-slow">
+                    <span id="nombre1">Tu Nombre</span> & <span id="nombre2">Mi Nombre</span>
+                </h1>
+                <p class="text-2xl md:text-3xl font-dancing text-primary">
+                    Juntos por siempre
+                </p>
+            </div>
+            
+            <div class="bg-white/80 dark:bg-dark-card/80 backdrop-blur-md rounded-3xl p-8 max-w-2xl mx-auto border border-pink-100 dark:border-pink-900/30 shadow-2xl">
+                <div class="space-y-6">
+                    <div class="text-center">
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Nuestra historia comenzó</p>
+                        <p class="text-3xl font-bold text-primary" id="fecha-inicio">15 de Enero, 2023</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="bg-pink-50 dark:bg-pink-900/20 rounded-2xl p-4">
+                            <p class="text-3xl font-bold text-primary" id="contador-anios">0</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Años</p>
+                        </div>
+                        <div class="bg-pink-50 dark:bg-pink-900/20 rounded-2xl p-4">
+                            <p class="text-3xl font-bold text-primary" id="contador-meses">0</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Meses</p>
+                        </div>
+                        <div class="bg-pink-50 dark:bg-pink-900/20 rounded-2xl p-4">
+                            <p class="text-3xl font-bold text-primary" id="contador-dias">0</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Días</p>
+                        </div>
+                        <div class="bg-pink-50 dark:bg-pink-900/20 rounded-2xl p-4">
+                            <p class="text-3xl font-bold text-primary" id="contador-horas">0</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Horas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-lg text-gray-600 dark:text-gray-400">
+                            <span id="contador-tiempo-completo">Calculando...</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-4">
+                <button onclick="editarInformacion()" class="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+                    <i data-lucide="edit" class="w-4 h-4 inline mr-2"></i>
+                    Personalizar
+                </button>
+                <button onclick="compartirHistoria()" class="bg-white dark:bg-dark-card border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+                    <i data-lucide="share-2" class="w-4 h-4 inline mr-2"></i>
+                    Compartir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Time Counter Section -->
+    <section id="contador" class="py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Nuestro Amor en Tiempo Real
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Cada segundo contado con amor</p>
+            </div>
+            
+            <div class="bg-white dark:bg-dark-card rounded-4xl p-12 shadow-2xl border border-pink-100 dark:border-pink-900/30">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Tiempo Juntos -->
+                    <div class="text-center space-y-6">
+                        <h3 class="text-2xl font-bold text-primary">Tiempo Juntos</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center bg-pink-50 dark:bg-pink-900/20 rounded-2xl p-4">
+                                <span class="font-medium">Días Totales</span>
+                                <span class="text-2xl font-bold text-primary" id="dias-totales">0</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-pink-50 dark:bg-pink-900/20 rounded-2xl p-4">
+                                <span class="font-medium">Semanas</span>
+                                <span class="text-2xl font-bold text-primary" id="semanas-totales">0</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-pink-50 dark:bg-pink-900/20 rounded-2xl p-4">
+                                <span class="font-medium">Horas</span>
+                                <span class="text-2xl font-bold text-primary" id="horas-totales">0</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-pink-50 dark:bg-pink-900/20 rounded-2xl p-4">
+                                <span class="font-medium">Minutos</span>
+                                <span class="text-2xl font-bold text-primary" id="minutos-totales">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Próximo Aniversario -->
+                    <div class="text-center space-y-6">
+                        <h3 class="text-2xl font-bold text-accent">Próximo Aniversario</h3>
+                        <div class="space-y-4">
+                            <div class="bg-gradient-to-r from-accent to-love text-white rounded-2xl p-6">
+                                <p class="text-lg font-bold mb-2">Faltan</p>
+                                <div class="text-3xl font-bold" id="aniversario-cuenta-regresiva">Calculando...</div>
+                            </div>
+                            <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-2xl p-4">
+                                <p class="font-medium text-yellow-800 dark:text-yellow-200">Celebraremos</p>
+                                <p class="text-xl font-bold text-yellow-600 dark:text-yellow-400" id="anios-proximo">1 año</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 px-4 bg-gradient-to-b from-transparent to-pink-50 dark:to-pink-900/10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Nuestros Momentos Especiales
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Cada foto cuenta una historia de amor</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="galeria-fotos">
+                <!-- Photos will be dynamically added here -->
+                <div class="bg-white dark:bg-dark-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group cursor-pointer" onclick="agregarFoto()">
+                    <div class="aspect-square bg-gradient-to-br from-pink-100 to-accent/20 dark:from-pink-900/20 dark:to-accent/10 flex items-center justify-center">
+                        <div class="text-center">
+                            <i data-lucide="plus-circle" class="w-16 h-16 mx-auto text-primary mb-4"></i>
+                            <p class="font-semibold text-primary">Agregar Foto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section id="calendario" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Fechas Especiales
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Los momentos que marcaron nuestra historia</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Add Date Form -->
+                <div class="bg-white dark:bg-dark-card rounded-3xl p-8 shadow-xl border border-pink-100 dark:border-pink-900/30">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Agregar Nueva Fecha</h3>
+                    <form id="fecha-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Nombre del Evento</label>
+                            <input type="text" id="evento-nombre" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Ej: Primera cita">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Fecha</label>
+                            <input type="date" id="evento-fecha" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Categoría</label>
+                            <select id="evento-categoria" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                                <option value="romantica">🌹 Romántica</option>
+                                <option value="hitos">🎯 Hitos de la Relación</option>
+                                <option value="familiar">👨‍👩‍👧‍👦 Familiar</option>
+                                <option value="viajes">✈️ Viajes</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Descripción</label>
+                            <textarea id="evento-descripcion" rows="3" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Describe este momento especial..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-accent text-white py-3 rounded-2xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+                            <i data-lucide="plus" class="w-4 h-4 inline mr-2"></i>
+                            Agregar Fecha Especial
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Dates List -->
+                <div class="bg-white dark:bg-dark-card rounded-3xl p-8 shadow-xl border border-pink-100 dark:border-pink-900/30">
+                    <h3 class="text-2xl font-bold text-accent mb-6">Nuestras Fechas</h3>
+                    <div id="fechas-lista" class="space-y-4 max-h-96 overflow-y-auto">
+                        <!-- Dates will be dynamically added here -->
+                        <div class="text-center text-gray-500 py-8">
+                            <i data-lucide="calendar" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                            <p>Aún no hay fechas especiales agregadas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedication Section -->
+    <section id="dedicatoria" class="py-20 px-4 bg-gradient-to-b from-transparent to-pink-50 dark:to-pink-900/10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Cartas de Amor
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Palabras que nacen del corazón</p>
+            </div>
+            
+            <div class="bg-white dark:bg-dark-card rounded-3xl p-12 shadow-2xl border border-pink-100 dark:border-pink-900/30">
+                <div class="space-y-8">
+                    <!-- Love Letter Editor -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-6 font-dancing">Escribe tu Carta de Amor</h3>
+                        <textarea id="carta-amor" rows="8" class="w-full px-6 py-4 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-lg" placeholder="Querido/a mi amor...&#10;&#10;Escribe aquí todos tus sentimientos, tus sueños juntos, tus promesas..."></textarea>
+                        <div class="mt-4 flex justify-between items-center">
+                            <button onclick="guardarCarta()" class="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+                                <i data-lucide="heart" class="w-4 h-4 inline mr-2"></i>
+                                Guardar Carta
+                            </button>
+                            <button onclick="generarPoema()" class="bg-white dark:bg-dark-card border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+                                <i data-lucide="sparkles" class="w-4 h-4 inline mr-2"></i>
+                                Generar Poema
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Saved Letters -->
+                    <div id="cartas-guardadas" class="space-y-6">
+                        <!-- Saved letters will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white dark:bg-dark-card border-t border-pink-100 dark:border-pink-900/30">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 font-dancing">
+                    Hecho con ❤️ para ustedes
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    Porque cada historia de amor merece ser contada
+                </p>
+            </div>
+            
+            <div class="flex justify-center gap-6 mb-8">
+                <button onclick="compartirHistoria()" class="p-3 bg-pink-50 dark:bg-pink-900/20 rounded-full hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors">
+                    <i data-lucide="share-2" class="w-5 h-5 text-primary"></i>
+                </button>
+                <button onclick="descargarMemories()" class="p-3 bg-pink-50 dark:bg-pink-900/20 rounded-full hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors">
+                    <i data-lucide="download" class="w-5 h-5 text-primary"></i>
+                </button>
+                <button onclick="resetearTodo()" class="p-3 bg-pink-50 dark:bg-pink-900/20 rounded-full hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors">
+                    <i data-lucide="refresh-cw" class="w-5 h-5 text-primary"></i>
+                </button>
+            </div>
+            
+            <div class="text-sm text-gray-500">
+                <p>© 2024 Nuestra Historia de Amor - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-dark-card rounded-3xl p-8 max-w-md w-full border border-pink-100 dark:border-pink-900/30">
+            <h3 class="text-2xl font-bold text-primary mb-6">Personalizar Información</h3>
+            <form id="edit-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Tu Nombre</label>
+                    <input type="text" id="edit-nombre1" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Nombre de tu Pareja</label>
+                    <input type="text" id="edit-nombre2" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Fecha de Inicio</label>
+                    <input type="date" id="edit-fecha-inicio" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="flex-1 bg-gradient-to-r from-primary to-accent text-white py-3 rounded-2xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+                        Guardar Cambios
+                    </button>
+                    <button type="button" onclick="cerrarModal()" class="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-3 rounded-2xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/love-main.js"></script>
+</body>
+</html>
