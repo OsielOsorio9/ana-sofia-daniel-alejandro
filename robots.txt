@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://osielosorio9.github.io/ana-sofia-daniel-alejandro/sitemap.xml
+
+# Allow search engines to crawl all content
+Crawl-delay: 1
+
+# Allow image indexing for SEO
+Allow: /images/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.webp
+Allow: *.svg
+
+# Block unnecessary files
+Disallow: /*.json$
+Disallow: /*?*$
+Disallow: /admin/
+Disallow: /private/

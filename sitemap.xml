@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <url>
+        <loc>https://osielosorio9.github.io/ana-sofia-daniel-alejandro/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80</image:loc>
+            <image:title>Ana Sofía y Daniel Alejandro - Historia de Amor</image:title>
+            <image:caption>Web romántica de Ana Sofía y Daniel Alejandro</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://osielosorio9.github.io/ana-sofia-daniel-alejandro/#contador</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://osielosorio9.github.io/ana-sofia-daniel-alejandro/#galeria</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80</image:loc>
+            <image:title>Galería de Ana Sofía y Daniel Alejandro</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1519452575417-564c1401ecc7?auto=format&fit=crop&w=800&q=80</image:loc>
+            <image:title>Momentos especiales de la pareja</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://osielosorio9.github.io/ana-sofia-daniel-alejandro/#calendario</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://osielosorio9.github.io/ana-sofia-daniel-alejandro/#dedicatoria</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>
