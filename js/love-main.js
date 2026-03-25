@@ -1,22 +1,130 @@
 // Initialize Lucide icons
 lucide.createIcons();
 
-// Global Variables
-let coupleData = {
-    nombre1: 'Tu Nombre',
-    nombre2: 'Mi Nombre',
-    fechaInicio: '2023-01-15',
-    fotos: [],
-    fechasEspeciales: [],
-    cartas: []
+// Static Configuration - Administrator Only
+const coupleData = {
+    nombre1: 'Ana Sofía',
+    nombre2: 'Daniel Alejandro',
+    fechaInicio: '2021-06-15',
+    fotos: [
+        'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1519452575417-564c1401ecc7?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1494790108755-2616b332c5ca?auto=format&fit=crop&w=800&q=80'
+    ],
+    fechasEspeciales: [
+        {
+            nombre: 'Primera Cita',
+            fecha: '2021-06-15',
+            categoria: 'romantica',
+            descripcion: 'Nuestra primera cita en el restaurante "La Casa de los Abuelos". Fue mágico desde el primer momento.'
+        },
+        {
+            nombre: 'Primer Beso',
+            fecha: '2021-06-22',
+            categoria: 'romantica',
+            descripcion: 'Bajo la luz de la luna en el malecón, el beso que confirmó que éramos el uno para el otro.'
+        },
+        {
+            nombre: 'Aniversario de Noviazgo',
+            fecha: '2021-06-15',
+            categoria: 'hitos',
+            descripcion: 'El día que oficialmente comenzamos esta hermosa aventura juntos.'
+        },
+        {
+            nombre: 'Viaje a Varadero',
+            fecha: '2021-12-20',
+            categoria: 'viajes',
+            descripcion: 'Nuestras primeras vacaciones juntos, días de sol, playa y amor infinito.'
+        },
+        {
+            nombre: 'Conocimiento de los Padres',
+            fecha: '2022-01-15',
+            categoria: 'familiar',
+            descripcion: 'El día que nuestras familias se conocieron y aprobaron nuestra unión con una gran celebración.'
+        },
+        {
+            nombre: 'Mudarse Juntos',
+            fecha: '2022-07-01',
+            categoria: 'hitos',
+            descripcion: 'El inicio de nuestra vida juntos en nuestro primer hogar.'
+        },
+        {
+            nombre: 'Viaje a París',
+            fecha: '2023-05-10',
+            categoria: 'viajes',
+            descripcion: 'La ciudad del amor fue testigo de nuestro compromiso eterno.'
+        },
+        {
+            nombre: 'Propuesta Matrimonio',
+            fecha: '2023-12-25',
+            categoria: 'hitos',
+            descripcion: 'La noche más especial de mi vida, cuando dije "Sí" a para siempre.'
+        }
+    ],
+    cartas: [
+        {
+            texto: `Mi amor Daniel,
+
+Hoy quiero recordarte lo mucho que significas para mí. Desde el 15 de junio de 2021, mi vida cambió por completo. Cada día a tu lado es un regalo que valoro inmensamente.
+
+Recuerdo nuestra primera cita como si fuera ayer. Tu sonrisa iluminó el restaurante y desde ese momento supe que eras especial. Gracias por tu paciencia, tu apoyo incondicional y por hacerme reír incluso en los días más difíciles.
+
+Eres mi compañero de vida, mi confidente, mi mejor amigo y el amor de mi vida. Cada momento contigo es una aventura que no cambiaría por nada.
+
+Te amo más de lo que las palabras pueden expresar, más de lo que el corazón puede sentir.
+
+Con todo mi amor eterno,
+Ana Sofía ❤️`,
+            fecha: '2024-01-15',
+            id: 1
+        },
+        {
+            texto: `A mi Ana Sofía maravillosa,
+
+En este camino del amor que recorremos juntos, he descubierto que la felicidad tiene tu nombre. Tu sonrisa ilumina mis días más grises, tu abrazo es mi refugio seguro y tu amor es el motor que me impulsa a ser mejor cada día.
+
+Desde que te conocí, aprendí lo que significa amar de verdad. Aprendí que el amor no es solo palabras, es acciones, es apoyo incondicional, es estar presente en los buenos y malos momentos.
+
+Gracias por cada detalle, por cada momento compartido, por cada lágrima que has secado y cada risa que hemos compartido. Gracias por ser tú, única, especial e irrepetible.
+
+Prometo amarte por siempre, en las buenas y en las malas, en salud y en enfermedad, hasta que el último aliento nos separe.
+
+Eres mi presente, mi futuro y mi sueño hecho realidad.
+
+Para siempre tuyo,
+Daniel 💕`,
+            fecha: '2024-02-14',
+            id: 2
+        },
+        {
+            texto: `Mi vida,
+
+Han pasado casi tres años desde que nuestras vidas se cruzaron, y siento que te conozco desde siempre. Cada día descubro algo nuevo que me enamora de ti: la forma en que arrugas la nariz cuando ríes, cómo te preocupas por los demás, tu pasión por la vida, tu fuerza ante las dificultades.
+
+Quiero que sepas que no hay nadie más en este mundo que me haga sentir como tú me haces. Contigo puedo ser yo mismo, sin máscaras, sin miedo. Contigo me siento en casa.
+
+Gracias por enseñarme el verdadero significado del amor, por mostrarme que vale la pena esperar a la persona correcta, por demostrarme que el amor real existe.
+
+Eres mi todo, mi razón de sonreír cada mañana, mi fuerza en los días difíciles, mi cómplice en las aventuras y mi refugio en las tormentas.
+
+Te amo más allá de las palabras, más allá del tiempo, más allá de la distancia.
+
+Eres mi hogar,
+Ana Sofía 🌹`,
+            fecha: '2024-06-15',
+            id: 3
+        }
+    ]
 };
 
-// Load saved data on page load
+// Load page
 document.addEventListener('DOMContentLoaded', function() {
-    cargarDatosGuardados();
     iniciarContadores();
-    setupEventListeners();
     actualizarInterfaz();
+    setupEventListeners();
 });
 
 // Theme Toggle
@@ -39,56 +147,46 @@ themeToggle.addEventListener('click', toggleTheme);
 
 // Setup Event Listeners
 function setupEventListeners() {
-    // Edit form
-    document.getElementById('edit-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        guardarInformacion();
+    // Add smooth scroll behavior for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 
-    // Date form
-    document.getElementById('fecha-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        agregarFechaEspecial();
-    });
+    // Add intersection observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-    // Auto-save carta
-    document.getElementById('carta-amor').addEventListener('input', function() {
-        clearTimeout(this.saveTimeout);
-        this.saveTimeout = setTimeout(() => {
-            localStorage.setItem('cartaTemporal', this.value);
-        }, 1000);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
     });
 }
 
-// Load saved data
-function cargarDatosGuardados() {
-    const savedData = localStorage.getItem('coupleData');
-    if (savedData) {
-        coupleData = JSON.parse(savedData);
-    }
-    
-    // Load temporary carta
-    const cartaTemporal = localStorage.getItem('cartaTemporal');
-    if (cartaTemporal) {
-        document.getElementById('carta-amor').value = cartaTemporal;
-    }
-}
-
-// Save data to localStorage
-function guardarDatos() {
-    localStorage.setItem('coupleData', JSON.stringify(coupleData));
-}
-
-// Update interface with loaded data
+// Update interface with static data
 function actualizarInterfaz() {
     document.getElementById('nombre1').textContent = coupleData.nombre1;
     document.getElementById('nombre2').textContent = coupleData.nombre2;
     document.getElementById('fecha-inicio').textContent = formatearFecha(coupleData.fechaInicio);
-    
-    // Update edit form
-    document.getElementById('edit-nombre1').value = coupleData.nombre1;
-    document.getElementById('edit-nombre2').value = coupleData.nombre2;
-    document.getElementById('edit-fecha-inicio').value = coupleData.fechaInicio;
     
     // Load gallery
     cargarGaleria();
@@ -159,41 +257,18 @@ function actualizarCuentaRegresivaAniversario(fechaInicio, anosActuales) {
     }
 }
 
-// Edit Information
-function editarInformacion() {
-    document.getElementById('edit-modal').classList.remove('hidden');
-}
-
-function cerrarModal() {
-    document.getElementById('edit-modal').classList.add('hidden');
-}
-
-function guardarInformacion() {
-    coupleData.nombre1 = document.getElementById('edit-nombre1').value;
-    coupleData.nombre2 = document.getElementById('edit-nombre2').value;
-    coupleData.fechaInicio = document.getElementById('edit-fecha-inicio').value;
-    
-    guardarDatos();
-    actualizarInterfaz();
-    cerrarModal();
-    
-    mostrarNotificacion('¡Información actualizada con éxito! 💕', 'success');
-}
-
-// Gallery Functions
+// Gallery Functions (Read-only)
 function cargarGaleria() {
     const galeria = document.getElementById('galeria-fotos');
     galeria.innerHTML = '';
     
-    // Add existing photos
+    // Add pre-configured photos
     coupleData.fotos.forEach((foto, index) => {
         const photoCard = crearPhotoCard(foto, index);
         galeria.appendChild(photoCard);
     });
     
-    // Add upload button
-    const uploadCard = crearUploadCard();
-    galeria.appendChild(uploadCard);
+    lucide.createIcons();
 }
 
 function crearPhotoCard(foto, index) {
@@ -202,81 +277,23 @@ function crearPhotoCard(foto, index) {
     div.innerHTML = `
         <div class="relative aspect-square">
             <img src="${foto}" alt="Foto ${index + 1}" class="w-full h-full object-cover gallery-image">
-            <button onclick="eliminarFoto(${index})" class="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                <i data-lucide="trash-2" class="w-4 h-4"></i>
-            </button>
         </div>
     `;
     return div;
 }
 
-function crearUploadCard() {
-    const div = document.createElement('div');
-    div.className = 'bg-white dark:bg-dark-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group cursor-pointer';
-    div.onclick = agregarFoto;
-    div.innerHTML = `
-        <div class="aspect-square bg-gradient-to-br from-pink-100 to-accent/20 dark:from-pink-900/20 dark:to-accent/10 flex items-center justify-center">
-            <div class="text-center">
-                <i data-lucide="plus-circle" class="w-16 h-16 mx-auto text-primary mb-4"></i>
-                <p class="font-semibold text-primary">Agregar Foto</p>
-            </div>
-        </div>
-    `;
-    return div;
-}
-
-function agregarFoto() {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.onchange = function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                coupleData.fotos.push(e.target.result);
-                guardarDatos();
-                cargarGaleria();
-                lucide.createIcons();
-                mostrarNotificacion('¡Foto agregada con éxito! 📸', 'success');
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-    input.click();
-}
-
-function eliminarFoto(index) {
-    if (confirm('¿Estás seguro de que quieres eliminar esta foto?')) {
-        coupleData.fotos.splice(index, 1);
-        guardarDatos();
-        cargarGaleria();
-        lucide.createIcons();
-        mostrarNotificacion('Foto eliminada', 'info');
-    }
-}
-
-// Calendar Functions
+// Calendar Functions (Read-only)
 function cargarFechasEspeciales() {
     const lista = document.getElementById('fechas-lista');
     lista.innerHTML = '';
     
-    if (coupleData.fechasEspeciales.length === 0) {
-        lista.innerHTML = `
-            <div class="text-center text-gray-500 py-8">
-                <i data-lucide="calendar" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
-                <p>Aún no hay fechas especiales agregadas</p>
-            </div>
-        `;
-    } else {
-        // Sort dates by date
-        const sortedDates = [...coupleData.fechasEspeciales].sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
-        
-        sortedDates.forEach((fecha, index) => {
-            const dateCard = crearDateCard(fecha, index);
-            lista.appendChild(dateCard);
-        });
-    }
+    // Sort dates by date
+    const sortedDates = [...coupleData.fechasEspeciales].sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+    
+    sortedDates.forEach((fecha, index) => {
+        const dateCard = crearDateCard(fecha, index);
+        lista.appendChild(dateCard);
+    });
     
     lucide.createIcons();
 }
@@ -293,162 +310,44 @@ function crearDateCard(fecha, index) {
     }[fecha.categoria];
     
     div.innerHTML = `
-        <div class="flex justify-between items-start">
+        <div class="flex items-start gap-3">
+            <span class="text-2xl">${categoriaIcon}</span>
             <div class="flex-1">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="text-lg">${categoriaIcon}</span>
-                    <h4 class="font-bold text-primary">${fecha.nombre}</h4>
-                </div>
+                <h4 class="font-bold text-primary mb-1">${fecha.nombre}</h4>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">${formatearFecha(fecha.fecha)}</p>
                 ${fecha.descripcion ? `<p class="text-sm text-gray-700 dark:text-gray-300">${fecha.descripcion}</p>` : ''}
             </div>
-            <button onclick="eliminarFecha(${index})" class="text-red-500 hover:text-red-700 p-1">
-                <i data-lucide="trash-2" class="w-4 h-4"></i>
-            </button>
         </div>
     `;
     
     return div;
 }
 
-function agregarFechaEspecial() {
-    const nombre = document.getElementById('evento-nombre').value;
-    const fecha = document.getElementById('evento-fecha').value;
-    const categoria = document.getElementById('evento-categoria').value;
-    const descripcion = document.getElementById('evento-descripcion').value;
-    
-    if (!nombre || !fecha) {
-        mostrarNotificacion('Por favor completa el nombre y la fecha', 'error');
-        return;
-    }
-    
-    const nuevaFecha = {
-        nombre,
-        fecha,
-        categoria,
-        descripcion
-    };
-    
-    coupleData.fechasEspeciales.push(nuevaFecha);
-    guardarDatos();
-    cargarFechasEspeciales();
-    
-    // Reset form
-    document.getElementById('fecha-form').reset();
-    
-    mostrarNotificacion('¡Fecha especial agregada! 📅', 'success');
-}
-
-function eliminarFecha(index) {
-    if (confirm('¿Estás seguro de que quieres eliminar esta fecha?')) {
-        coupleData.fechasEspeciales.splice(index, 1);
-        guardarDatos();
-        cargarFechasEspeciales();
-        mostrarNotificacion('Fecha eliminada', 'info');
-    }
-}
-
-// Letter Functions
-function guardarCarta() {
-    const cartaTexto = document.getElementById('carta-amor').value;
-    
-    if (!cartaTexto.trim()) {
-        mostrarNotificacion('Por favor escribe algo en tu carta', 'error');
-        return;
-    }
-    
-    const carta = {
-        texto: cartaTexto,
-        fecha: new Date().toISOString(),
-        id: Date.now()
-    };
-    
-    coupleData.cartas.push(carta);
-    guardarDatos();
-    cargarCartas();
-    
-    // Clear temporary carta
-    localStorage.removeItem('cartaTemporal');
-    document.getElementById('carta-amor').value = '';
-    
-    mostrarNotificacion('¡Carta guardada con éxito! 💌', 'success');
-}
-
+// Letter Functions (Read-only)
 function cargarCartas() {
-    const contenedor = document.getElementById('cartas-guardadas');
+    const contenedor = document.getElementById('cartas-mostradas');
     contenedor.innerHTML = '';
     
     if (coupleData.cartas.length > 0) {
         const titulo = document.createElement('h3');
-        titulo.className = 'text-xl font-bold text-primary mb-4';
-        titulo.textContent = 'Cartas Guardadas';
+        titulo.className = 'text-2xl font-bold text-primary mb-6 font-dancing';
+        titulo.textContent = 'Nuestras Cartas de Amor';
         contenedor.appendChild(titulo);
         
-        coupleData.cartas.slice().reverse().forEach(carta => {
+        coupleData.cartas.forEach(carta => {
             const cartaDiv = document.createElement('div');
             cartaDiv.className = 'letter-paper bg-white dark:bg-dark-card rounded-2xl p-6 border border-pink-100 dark:border-pink-900/30';
             cartaDiv.innerHTML = `
                 <div class="flex justify-between items-start mb-4">
                     <span class="text-sm text-gray-500">${formatearFecha(carta.fecha)}</span>
-                    <button onclick="eliminarCarta(${carta.id})" class="text-red-500 hover:text-red-700">
-                        <i data-lucide="trash-2" class="w-4 h-4"></i>
-                    </button>
                 </div>
-                <p class="whitespace-pre-wrap text-gray-700 dark:text-gray-300">${carta.texto}</p>
+                <p class="whitespace-pre-wrap text-gray-700 dark:text-gray-300 leading-relaxed">${carta.texto}</p>
             `;
             contenedor.appendChild(cartaDiv);
         });
     }
     
     lucide.createIcons();
-}
-
-function eliminarCarta(id) {
-    if (confirm('¿Estás seguro de que quieres eliminar esta carta?')) {
-        coupleData.cartas = coupleData.cartas.filter(carta => carta.id !== id);
-        guardarDatos();
-        cargarCartas();
-        mostrarNotificacion('Carta eliminada', 'info');
-    }
-}
-
-function generarPoema() {
-    const poemas = [
-        `En tus ojos encuentro el universo,
-        En tu sonrisa mi razón de existir,
-        Cada día a tu lado es una aventura,
-        Que no cambiaría por nada del vivir.
-
-        ${coupleData.nombre1} y ${coupleData.nombre2},
-        Dos almas que se encontraron,
-        Y en el amor se transformaron,
-        En la historia más hermosa del mundo.`,
-
-        `Como el sol que ilumina el día,
-        Tú iluminas mi existencia,
-        Como la luna que guía la noche,
-        Tú guías mi conciencia.
-
-        Juntos hemos construido,
-        Un amor sin medida,
-        ${coupleData.nombre1} y ${coupleData.nombre2},
-        Siempre unidos en la vida.`,
-
-        `En el calendario de mi vida,
-        Cada día marca tu presencia,
-        Eres la más bella experiencia,
-        Mi amor, mi dulce esencia.
-
-        ${coupleData.nombre1} te amo,
-        ${coupleData.nombre2} te adoro,
-        Y en este nuestro amor,
-        Encuentro mi mayor tesoro.`
-    ];
-    
-    const poemaAleatorio = poemas[Math.floor(Math.random() * poemas.length)];
-    document.getElementById('carta-amor').value = poemaAleatorio;
-    
-    mostrarNotificación('¡Poema generado! ✨', 'success');
 }
 
 // Utility Functions
@@ -460,24 +359,6 @@ function formatearFecha(fechaString) {
         day: 'numeric' 
     };
     return fecha.toLocaleDateString('es-ES', opciones);
-}
-
-function mostrarNotificacion(mensaje, tipo = 'info') {
-    const colores = {
-        success: 'bg-green-500',
-        error: 'bg-red-500',
-        info: 'bg-blue-500'
-    };
-    
-    const notificacion = document.createElement('div');
-    notificacion.className = `fixed top-20 right-4 ${colores[tipo]} text-white px-6 py-3 rounded-2xl shadow-lg z-50 success-bounce`;
-    notificacion.textContent = mensaje;
-    
-    document.body.appendChild(notificacion);
-    
-    setTimeout(() => {
-        notificacion.remove();
-    }, 3000);
 }
 
 // Share Functions
@@ -498,75 +379,20 @@ function compartirHistoria() {
     }
 }
 
-function descargarMemories() {
-    const datos = {
-        pareja: {
-            nombre1: coupleData.nombre1,
-            nombre2: coupleData.nombre2,
-            fechaInicio: coupleData.fechaInicio
-        },
-        fechasEspeciales: coupleData.fechasEspeciales,
-        cartas: coupleData.cartas,
-        fechaExportacion: new Date().toISOString()
+function mostrarNotificacion(mensaje, tipo = 'info') {
+    const colores = {
+        success: 'bg-green-500',
+        error: 'bg-red-500',
+        info: 'bg-blue-500'
     };
     
-    const blob = new Blob([JSON.stringify(datos, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `nuestra-historia-de-amor-${Date.now()}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
+    const notificacion = document.createElement('div');
+    notificacion.className = `fixed top-20 right-4 ${colores[tipo]} text-white px-6 py-3 rounded-2xl shadow-lg z-50 success-bounce`;
+    notificacion.textContent = mensaje;
     
-    mostrarNotificación('¡Memorias descargadas! 💾', 'success');
+    document.body.appendChild(notificacion);
+    
+    setTimeout(() => {
+        notificacion.remove();
+    }, 3000);
 }
-
-function resetearTodo() {
-    if (confirm('¿Estás seguro de que quieres eliminar toda la información? Esta acción no se puede deshacer.')) {
-        localStorage.clear();
-        coupleData = {
-            nombre1: 'Tu Nombre',
-            nombre2: 'Mi Nombre',
-            fechaInicio: '2023-01-15',
-            fotos: [],
-            fechasEspeciales: [],
-            cartas: []
-        };
-        actualizarInterfaz();
-        mostrarNotificación('Todo ha sido reiniciado', 'info');
-    }
-}
-
-// Add smooth scroll behavior for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Add intersection observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-up');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
-});

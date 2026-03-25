@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Historia de Amor 💕</title>
+    <title>Ana Sofía & Daniel Alejandro - Nuestra Historia de Amor 💕</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -110,13 +110,9 @@
             </div>
             
             <div class="flex justify-center gap-4">
-                <button onclick="editarInformacion()" class="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
-                    <i data-lucide="edit" class="w-4 h-4 inline mr-2"></i>
-                    Personalizar
-                </button>
-                <button onclick="compartirHistoria()" class="bg-white dark:bg-dark-card border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+                <button onclick="compartirHistoria()" class="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
                     <i data-lucide="share-2" class="w-4 h-4 inline mr-2"></i>
-                    Compartir
+                    Compartir Nuestra Historia
                 </button>
             </div>
         </div>
@@ -187,15 +183,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="galeria-fotos">
-                <!-- Photos will be dynamically added here -->
-                <div class="bg-white dark:bg-dark-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group cursor-pointer" onclick="agregarFoto()">
-                    <div class="aspect-square bg-gradient-to-br from-pink-100 to-accent/20 dark:from-pink-900/20 dark:to-accent/10 flex items-center justify-center">
-                        <div class="text-center">
-                            <i data-lucide="plus-circle" class="w-16 h-16 mx-auto text-primary mb-4"></i>
-                            <p class="font-semibold text-primary">Agregar Foto</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Photos will be pre-configured by administrator -->
             </div>
         </div>
     </section>
@@ -210,49 +198,10 @@
                 <p class="text-xl text-gray-600 dark:text-gray-400">Los momentos que marcaron nuestra historia</p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Add Date Form -->
-                <div class="bg-white dark:bg-dark-card rounded-3xl p-8 shadow-xl border border-pink-100 dark:border-pink-900/30">
-                    <h3 class="text-2xl font-bold text-primary mb-6">Agregar Nueva Fecha</h3>
-                    <form id="fecha-form" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Nombre del Evento</label>
-                            <input type="text" id="evento-nombre" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Ej: Primera cita">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Fecha</label>
-                            <input type="date" id="evento-fecha" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Categoría</label>
-                            <select id="evento-categoria" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                                <option value="romantica">🌹 Romántica</option>
-                                <option value="hitos">🎯 Hitos de la Relación</option>
-                                <option value="familiar">👨‍👩‍👧‍👦 Familiar</option>
-                                <option value="viajes">✈️ Viajes</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Descripción</label>
-                            <textarea id="evento-descripcion" rows="3" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Describe este momento especial..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-accent text-white py-3 rounded-2xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
-                            <i data-lucide="plus" class="w-4 h-4 inline mr-2"></i>
-                            Agregar Fecha Especial
-                        </button>
-                    </form>
-                </div>
-                
-                <!-- Dates List -->
-                <div class="bg-white dark:bg-dark-card rounded-3xl p-8 shadow-xl border border-pink-100 dark:border-pink-900/30">
-                    <h3 class="text-2xl font-bold text-accent mb-6">Nuestras Fechas</h3>
-                    <div id="fechas-lista" class="space-y-4 max-h-96 overflow-y-auto">
-                        <!-- Dates will be dynamically added here -->
-                        <div class="text-center text-gray-500 py-8">
-                            <i data-lucide="calendar" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
-                            <p>Aún no hay fechas especiales agregadas</p>
-                        </div>
-                    </div>
+            <div class="bg-white dark:bg-dark-card rounded-3xl p-8 shadow-xl border border-pink-100 dark:border-pink-900/30">
+                <h3 class="text-2xl font-bold text-accent mb-6">Nuestras Fechas Importantes</h3>
+                <div id="fechas-lista" class="space-y-4 max-h-96 overflow-y-auto">
+                    <!-- Dates will be pre-configured by administrator -->
                 </div>
             </div>
         </div>
@@ -270,25 +219,9 @@
             
             <div class="bg-white dark:bg-dark-card rounded-3xl p-12 shadow-2xl border border-pink-100 dark:border-pink-900/30">
                 <div class="space-y-8">
-                    <!-- Love Letter Editor -->
-                    <div>
-                        <h3 class="text-2xl font-bold text-primary mb-6 font-dancing">Escribe tu Carta de Amor</h3>
-                        <textarea id="carta-amor" rows="8" class="w-full px-6 py-4 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-lg" placeholder="Querido/a mi amor...&#10;&#10;Escribe aquí todos tus sentimientos, tus sueños juntos, tus promesas..."></textarea>
-                        <div class="mt-4 flex justify-between items-center">
-                            <button onclick="guardarCarta()" class="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
-                                <i data-lucide="heart" class="w-4 h-4 inline mr-2"></i>
-                                Guardar Carta
-                            </button>
-                            <button onclick="generarPoema()" class="bg-white dark:bg-dark-card border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
-                                <i data-lucide="sparkles" class="w-4 h-4 inline mr-2"></i>
-                                Generar Poema
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Saved Letters -->
-                    <div id="cartas-guardadas" class="space-y-6">
-                        <!-- Saved letters will appear here -->
+                    <!-- Display Pre-written Letters -->
+                    <div id="cartas-mostradas" class="space-y-6">
+                        <!-- Letters will be pre-configured by administrator -->
                     </div>
                 </div>
             </div>
@@ -311,12 +244,6 @@
                 <button onclick="compartirHistoria()" class="p-3 bg-pink-50 dark:bg-pink-900/20 rounded-full hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors">
                     <i data-lucide="share-2" class="w-5 h-5 text-primary"></i>
                 </button>
-                <button onclick="descargarMemories()" class="p-3 bg-pink-50 dark:bg-pink-900/20 rounded-full hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors">
-                    <i data-lucide="download" class="w-5 h-5 text-primary"></i>
-                </button>
-                <button onclick="resetearTodo()" class="p-3 bg-pink-50 dark:bg-pink-900/20 rounded-full hover:bg-pink-100 dark:hover:bg-pink-900/30 transition-colors">
-                    <i data-lucide="refresh-cw" class="w-5 h-5 text-primary"></i>
-                </button>
             </div>
             
             <div class="text-sm text-gray-500">
@@ -324,35 +251,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Edit Modal -->
-    <div id="edit-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-dark-card rounded-3xl p-8 max-w-md w-full border border-pink-100 dark:border-pink-900/30">
-            <h3 class="text-2xl font-bold text-primary mb-6">Personalizar Información</h3>
-            <form id="edit-form" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium mb-2">Tu Nombre</label>
-                    <input type="text" id="edit-nombre1" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">Nombre de tu Pareja</label>
-                    <input type="text" id="edit-nombre2" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">Fecha de Inicio</label>
-                    <input type="date" id="edit-fecha-inicio" class="w-full px-4 py-3 rounded-2xl border border-pink-200 dark:border-pink-800 bg-white dark:bg-dark-bg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                </div>
-                <div class="flex gap-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-primary to-accent text-white py-3 rounded-2xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
-                        Guardar Cambios
-                    </button>
-                    <button type="button" onclick="cerrarModal()" class="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-3 rounded-2xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
-                        Cancelar
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <script src="js/love-main.js"></script>
 </body>
